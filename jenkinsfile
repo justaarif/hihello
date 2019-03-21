@@ -11,6 +11,6 @@ node{
       justaarif''', cc: '',from : '', replyTo: '',subject: 'Jenkins Job', to: 'arifmulla961@gmail.com'
     }
     stage('Slack Notification'){
-        slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'Hi Welcome', teamDomain: 'hihello', token: 'TGXEUBKMF/BH66LUHTM/htbUSNyo9GEdXG5KMdlNCzNj'
+    slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'hi', teamDomain: 'hihello', tokenCredentialId: 'slack-demo'    
     }
 }
