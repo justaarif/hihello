@@ -1,0 +1,16 @@
+node{
+    stage{'SCM Checkout'){
+      git 'https://github.com/justaarif/hihello'
+    }
+    stage(' Compile-Package'){
+      def mvnHome = tool name: 'maven-3' , type: 'maven'
+      sh "${mvnHome}/bin/mvn package"
+    }
+    stage('Email Notification'){
+      mail bcc: '', body: ''HI welcome 
+      justaarif''', cc: '',from : '', replyTo: '',subject: 'Jenkins Job', to: 'arifmulla961@gmail.com'
+    }
+    stage('Slack Notification'){
+        slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'Hi Welcome', teamDomain: 'hihello', token: 'TGXEUBKMF/BH66LUHTM/htbUSNyo9GEdXG5KMdlNCzNj'
+    }
+}
